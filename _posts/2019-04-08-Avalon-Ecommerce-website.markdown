@@ -63,7 +63,7 @@ Finally, we illustrate the layout and detailed design of an e-commerce website t
 
 &nbsp;<center><strong>Phase 2: Building User Interface & Database Connectivity</strong></center>
 
-The next step, we decided to use bootstrap framework as our front-end interface. We followed the **CRUD (Create, Read, Update, and Delete) operation**. I worked on the **Read** operation, which is viewing the products for the end-user to purchase.
+The next step, we decided to use bootstrap framework as our front-end interface. We followed the **CRUD (Create, Read, Update, and Delete) operation**. I worked on the **Read** operation, which is viewing the products for the end-user to purchase and check out an product.
 
 &nbsp;<center><strong>Fetching data from the database</strong></center>
 
