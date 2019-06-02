@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title></title>
+    <link>http://localhost:4000</link>
+    <description>
+      
+    </description>
+    
+        
+            <item>
+                <title>Avalon E-Commerce Website</title>
+                <link>http://localhost:4000/web/dev/2019/04/08/Avalon-Ecommerce-website/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <h2 id="abstract">Abstract</h2>
+
+<p>The past recent years, the Internet has increasingly become the best channels for collecting information and gradually into the traditional circulation, so e-commerce began to pop up and has become a popular topic. The online shopping has become a more accessible way of shopping. Users can quickly find their favorite goods, making shopping more affordable, faster, and convenient. Online store has achieved great success. For example, we are  familiar with Amazon.</p>
+
+<p><strong>PHP and MySQL</strong> combination has become useful in most businesses. PHP and MySQL combination has become the ideal solution for building an online shopping system.</p>
+
+<p>My group and I decided to develop our e-commerce website as our project for our Database management systems class. We decided to call the site Avalon because one of the group member’s Mom used to own a clothing store in Avalon, New Jersey before it was shut down due to a destructive storm.</p>
+
+<hr />
+<h3 id="development-process">Development Process</h3>
+<p><img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/developmentprocess.png" height="250" /></p>
+
+<p>This project was my first experience in actually going through an entire development cycle, which included constructing the layouts for the website.</p>
+
+<p> <center><strong>Phase 1: Constructing the Layout</strong></center></p>
+
+<p>To start, I worked on developing the business rules for the relational database. My goal was to discuss the structure and components of a database for a real-world e-commerce system.</p>
+
+<p> <center><strong>Problem</strong></center></p>
+
+<center>What are we going to sell for the consumer?</center>
+
+<p> <center><strong>Solution</strong></center></p>
+
+<center>We went for selling men and women t-shirts. We then discuss relevant components of a typical e-commerce database system for the admin user.
+Finally, we illustrate the layout and detailed design of an e-commerce website that correlates with the database system.</center>
+
+<p> <center><strong>Business Rules</strong></center></p>
+<center> - A user can have zero or many orders</center>
+<center> - Orders are assigned to only one user</center>
+<center> - A User can only be assigned to a cart</center>
+<center> - A user can remove one or more products from the cart</center>
+<center> - A cart can only be assigned to one user</center>
+<center> - An order can be assigned to only one product</center>
+<center> - A product can have zero or many orders</center>
+<center> - A quantity size can be assigned to only one product</center>
+<center> -  A product can have one or many quantity sizes</center>
+<center> -  A category can have one or many products listed</center>
+<center> -  A product can only one be assigned to one category.</center>
+
+<h3 id="erd-diagram--uml-diagram">ERD Diagram &amp; UML Diagram</h3>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/UML.png" height="500" />&nbsp;
+</p>
+
+<p> <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/ERD-Diagram.png" height="500" width="1500" /></p>
+
+<p> <center><strong>Phase 2: Building User Interface &amp; Database Connectivity</strong></center></p>
+
+<p>The next step, we decided to use bootstrap framework as our front-end interface. We followed the <strong>CRUD (Create, Read, Update, and Delete) operation</strong>. I worked on the <strong>Read</strong> operation, which is viewing the products for the end-user to purchase.</p>
+
+<p> <center><strong>Fetching data from the database</strong></center></p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/fetch-data.png" height="250" weight="300" />&nbsp;
+</p>
+
+<p>I fetched data from <strong>MySQL tables</strong> by executing a SQL SELECT statement through PHP function called <strong>mysql_query</strong>.  I used a while loop to bring the results from the table using <strong>$result -&gt; fetch_assoc())</strong>. This PHP function returns the row as an associative array. The content of the rows are assigned to the variable <strong>$row</strong>, and the values in rows are the printed.</p>
+
+<p> <center><strong>Phase 3: Incorporating Triggers and Procedures</strong></center></p>
+
+<p> <center><strong>Triggers</strong></center></p>
+
+<p>My group and I decided to include triggers and procedures in our database. Triggers execute to specific events in our table. It helps maintain the integrity of the information on the database. If we decided to make a change in a table, the move would occur throughout the database. For instance, lets say the admin wants to delete a product because it is out of stock, so let’s create a trigger before we delete the product in the product table. First, we must remove the <strong>old product id</strong> from the table for the product to be deleted. Another instance, is if we want to update a product, we must set the <strong>new product attributes</strong> to the <strong>old product attributes</strong>.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/triggers.png" height="350" />&nbsp;
+</p>
+
+<p>When using SQL programs there is two methods what are available for storing and executing programs. You can <strong>store the programs locally</strong> and <strong>create applications</strong> that send the commands to SQL Server and process them, or you can <strong>save the programs as stored procedures</strong> in SQL Server and create applications that execute the stored procedures and process the results. You can create a stored procedure once, store it in the database, and call it any number of times in a program.</p>
+
+<p> <center><strong>Stored Procedures</strong></center></p>
+
+<p>The <strong>GetAllProducts()</strong> stored procedures select all products from the products table. We use the <strong>CREATE PROCEDURE statement</strong> to create a new stored procedure. We specify the name of the stored procedure after the CREATE PROCEDURE statement. In this case, the name of the stored procedure is <strong>GetAllProducts</strong>. We put the parentheses after the name of the stored procedure.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/StoredProcedures.png" height="200" />&nbsp;
+</p>
+
+<h3 id="prototypes">Prototypes</h3>
+
+<p> <center><strong>Outline of the website</strong></center></p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/pro1.png" height="400" />&nbsp;
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/pro2.png" height="400" />&nbsp;
+</p>
+
+<p> <center><strong>Final Design</strong></center></p>
+<p align="center">
+
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/pro3.png" height="400" />&nbsp;
+</p>
+
+<p> <center><strong>UI Demo</strong></center></p>
+<iframe src="https://player.vimeo.com/video/339638159" width="900" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+<h2 id="credits">Credits</h2>
+<ul>
+  <li><em>Gregory Jones, <a href="mailto:mrjonesgregory@gmail.com">mrjonesgregory@gmail.com</a></em></li>
+  <li><em>Danni Jin, <a href="mailto:dj6702098@sju.edu">dj6702098@sju.edu</a></em></li>
+  <li><em>Megha Ukkali, <a href="mailto:mu721466@sju.edu">mu721466@sju.edu</a></em></li>
+</ul>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/web/dev/2019/04/08/Avalon-Ecommerce-website/</guid>
+                <description>
+                    
+                    Database management Systems (DBMS351)
+                    
+                </description>
+                <pubDate>Mon, 08 Apr 2019 15:51:19 -0400</pubDate>
+                <author></author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Hawk Ride - Ride sharing escort services for college students (iOS Mobile App)</title>
+                <link>http://localhost:4000/swift/2019/01/28/Hawk-Ride-Ride-Sharing-ios/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <h3 id="abstract">Abstract</h3>
+<p>Hawk Ride is a convenient student ride-sharing service that allows college students to request a ride, and a student driver provides transportation to the student throughout the campus.</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/hawkride.png" height="400" />
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/homescreen.png" height="400" />
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/rider.png" height="400" />
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/driver.png" height="400" />
+</p>
+<p> <center><strong>Problem</strong></center>
+Most Colleges and Universities are using <strong>aging and inefficient technology</strong>. For instance, a radio dispatch. When I was a college student, I would call Public Safety our campus security for an escort to my dorm. My issue with using Public Safety is the <strong>long wait period</strong>. I had no clue how long it would take them to get to my location. There was no way for me to track the driver to see if he or she was close. <strong>Uber and Lyft</strong> became a hit in the transportation industry due to using sufficient technology that prevents these obstacles. Not to mention, most students at my school stop depending on Public Safety.</p>
+
+<p> <center><strong>Solution</strong></center>
+Hawk Ride provides a <strong>quick and efficient</strong> student escort service program, <strong>automate dispatch to reduce wait-time</strong>, and it is a <strong>free service</strong> that would be used to keep our students safe on and off campus.</p>
+
+<p> <center><strong>How it all works?</strong></center></p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/works.png" height="300" width="800" />
+</p>
+<p> <center><strong>Safety &amp; Training</strong></center></p>
+<center> - Drivers will be conducting a <strong>DMV and Background checks</strong>.</center>
+<center> - Drivers will use a  <strong>University vehicle</strong>, so they must go through a <strong>certification training process</strong>.</center>
+<center> - Drivers must complete the <strong>Authorized Driver Application Form</strong>.</center>
+
+<p> <center><strong>How to pay for a ride?</strong></center></p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/ride.png" height="400" width="900" />
+</p>
+
+<p> <center><strong>Restricted Locations &amp; Ride History</strong></center></p>
+
+<p>Students have a list of pick up and drop off locations. My intent with the ride-sharing app is to provide a <strong>safe and reliable service</strong> that is useful for students to use as escort to their dorm halls and campus sites. This platform is not an <strong>Uber or Lyft service</strong>, so students <strong>cannot be pick up or drop off at any location</strong>.Not to mention, students rides are <strong>tracked</strong> and can be <strong>viewed</strong>. </p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/riderequest1.png" height="500" />
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/riderequest2.png" height="500" />
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/ridehistory.png" height="500" />
+</p>
+<h3 id="development-stages">Development Stages</h3>
+
+<p> <center><strong>Technologies Used &amp; Cocoapods</strong></center>
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/tech.png" height="400" width="800" /></p>
+
+<p> <center><strong>Registering and Log in Feature</strong></center>
+Hawk Ride allows students to register with their <strong>first name</strong>, <strong>lastname</strong>, and a <strong>University Email</strong>. This information is stored in <strong>Google Firebase</strong> real-time database.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/usersData.png" height="200" width="700" />
+</p>
+
+<p> <center><strong>Pick up &amp; Drop Off Locations</strong></center>
+Like I mentioned before, students are <strong>limited</strong> to where they can be picked up and dropped off. I decided to develop a <strong>tableview</strong> that displays the list of locations that students can choose from. I stored each location including the <strong>longitude</strong> and <strong>latitude</strong> of the location inside of an <strong>array list</strong>.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/locations.png" height="400" width="700" />
+</p>
+
+<center>I developed a tableview which displays the list of locations.</center>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/tableview.png" height="400" width="700" />
+</p>
+<p> <center><strong>Booking Feature</strong></center>
+This allows drivers the option to <strong>accept</strong> or <strong>deny</strong> incoming ride requests and get information on the <strong>current location and destination</strong> of the student passenger. When the passenger clicks the <strong>request ride button it sends a notification to the driver</strong>, and the driver has a chose to accept or deny the request. If the driver accepts the request, then the passenger <strong>pick up location will display on the drivers screen</strong>.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/acceptRide.png" height="200" width="700" />
+</p>
+
+<p>This is a code snippet of the function that I created. When the drivers accept the ride, it will pass the <strong>passengerID</strong> which has the <strong>current location</strong> and gives it to the driver, so the drivers know the <strong>passenger’s pickup</strong>. Down below is a screenshot of how the notification pop up looks on the driver’s screen.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/acceptTrip.png" height="700" width="300" />
+</p>
+
+<p> <center><strong>Point to Point Directions</strong></center>
+Hawk Ride app provides directions to both the driver and the passenger. I used <strong>MapKit</strong> for iOS(Moving to Google Maps) to calculate the route and make directions available.</p>
+
+<p>The green map annotation is the passenger’s current location where they want to be picked up form.</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/directionspath.png" height="700" width="300" />
+</p>
+
+<p>Once the driver accepts the trip, the map will <strong>draw a route</strong> from the driver’s current location to the passenger current location.</p>
+
+<p>When the driver clicks get directions, the app will use <strong>Apple maps</strong> to get directions.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/applemaps.png" height="700" width="300" />
+</p>
+
+<p> <center><strong>The ability to Identify a Device's Location</strong></center>
+Hawk Ride, via <strong>CoreLocation Framework</strong>(for iOS platforms) obtains the <strong>geographic location and orientation</strong> of a device to schedule location and delivery.</p>
+
+<p> <center><strong>What Technology is Hawk Ride Built on?</strong></center>
+The tech side of the app is mainly written in <strong>Swift</strong> for the iOS platform. I programmed everything in Swift. The UI design was programmed in Swift. Also, the real-time dispatch system being built in Swift. Not to mention, I used <strong>Google Firebase API</strong> for the real time database the stored users location and profile information. <strong>Twilio</strong> is the force behind Hawk Ride’s text messages, and push notifications are implemented through <strong>Apply Push notifications Service</strong> on the iOS platform.</p>
+
+<p> <center><strong>Next Steps</strong></center></p>
+<center> - Re-developed database.</center>
+<center> - Support all iPhone device screen resolution.</center>
+<center> - Migrate to Google Maps.</center>
+<center> - Single sign on Authentication feature.</center>
+<center> - Develop an android version.</center>
+
+<p> <center><strong>Live Demo</strong></center></p>
+
+<iframe src="https://player.vimeo.com/video/339689006" width="900" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/ridefastandridefree.png" height="400" />
+</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/swift/2019/01/28/Hawk-Ride-Ride-Sharing-ios/</guid>
+                <description>
+                    
+                    Computer Science Project (CSC495)
+                    
+                </description>
+                <pubDate>Mon, 28 Jan 2019 09:31:19 -0500</pubDate>
+                <author></author>
+            </item>
+        
+    
+        
+            <item>
+                <title>Armour Desk</title>
+                <link>http://localhost:4000/web/dev/2018/05/30/Armour-Desk/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p>Summer ’18 - I interned at <strong>Under Armour Global Headquarters</strong> working with the IT Service Management team. I was tasked with re-designing the interface to be more <strong>engaging, efficient, and global</strong> to use. To accurately identify users needs. I conducted focus groups that would allow end-users to give us feedback about their experience with <strong>Armour Desk</strong>.</p>
+
+<p>This project was my first experience working in Sketch and working through the UI development cycle, which included <strong>conducting background research, online surveys, competitive analysis, focus groups, visual mockups, and interactive prototypes</strong>.</p>
+
+<p> <center><strong>What is Armour Desk?</strong></center>
+Armour Desk is Under Armour’s web application that allows employees to access an online help desk. This application will enable users to <strong>log incidents, request hardware/software, submit change requests, onboard new employees, and more</strong>.</p>
+
+<p> <center><strong>Problem</strong></center>
+The Problem with the current model of Armour Desk is its <strong>lack of functionality and outdated interface</strong>. My goal was to pinpoint the problems and work on resolving the issues to help develop a new model of Armour Desk.  The beginning of my summer at Under Armour, I did background research understanding the back end portal of Armour Desk, which is called ServiceNow. I was trained to know how the end user is enabled to <strong>submit an incident, request hardware/software, onboard employees, and provisioning consultants</strong>.</p>
+
+<p> <center><strong>UX Design - Phase 1</strong></center>
+To Start, I sent out a survey to departments across the company regarding their experience with Armour Desk. My review included many different questions about the application, but of course, the most important question is</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/surveys.png" height="500" />&nbsp;
+</p>
+
+<p> <center><strong>What might improve the experience with Armour Desk</strong></center></p>
+<center> - “More clear Navigation.”- Anonymous user</center>
+<center> - “Faster responses time and email notification regarding status change for all request.” - Anonymous user</center>
+<center> - “A better selection of services, a more intuitive interface, a service catalog that fully describes the services offered, an entirely new on-boarding form and experience for hiring managers.” - Anonymous user</center>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/fg.png" height="500" />&nbsp;
+</p>
+
+<p> <center><strong>UX Design - Phase 2</strong></center>
+The next step I sat down with the end-users and listened to what they have to say about the current model of Armour Desk.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/armourdesk.png" height="400" />&nbsp;
+</p>
+
+<p>I indented several problems with Armour Desk: unresponsive site, lack of intuitive and helpful navigation system, and the layout are very unorganized.</p>
+
+<p>After conducting my background research and focus group, I identified a single overarching objective for this project: a simple minimalist design.</p>
+
+<p>I learned that Under Armour is a company that strives to <strong>“Find A Better Way”</strong>, which mean how can better understand a system within the scope of own role and support creativity &amp; innovation in others by listening to Teammates’s ideas , sharing our own perspective, strengthen our capabilities, and creating consistency globally , which help the go-to-market process.</p>
+
+<p>Not to mentioned - How can the new design change the game?</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/sc.png" height="500" />&nbsp;
+</p>
+
+<p>I saw how the design and interface of Armour Desk were causing Under Armour to lose precious time trying to figure out how to utilize employee service delivery.</p>
+
+<h3 id="objectives">Objectives:</h3>
+<center> - Redesign Armour Desk to be more Engaging, Efficient, and Global to use.</center>
+<center> - Serve the needs of all users by letting them quickly find what they are seeking.</center>
+<center> - Provide a pleasant and delightful experience to all users by making it easy for them to complete their task.</center>
+<center> - Be strategic and agile, and focus on making our content useful, interactive, and engaging. </center>
+<p> </p>
+
+<p>One of my main objectives was to re-design the interface to be <strong>minimalist</strong>. I used some inspiration from the Under Armour E-commerce, and try to bring that UA to feel to the Armour Desk platform. Knowing that I was making a help desk application; I would like it to be user-friendly and straightforward.</p>
+
+<p>When I think of keeping it simple and user-friendly; I believe other companies follow that mindset, for instance, like <strong>Apple</strong>. I love Apple their aesthetic and minimalist design, which encourage me to bring that feel to life with Armour Desk.</p>
+
+<p> <center><strong>Apple Landing Page</strong></center></p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/apple.png" height="400" />&nbsp;
+</p>
+
+<p>I decided to continue to follow Under Armour’s branding guidelines. I utilized their color scheme as some cool fonts that I like: Avenir Next.</p>
+
+<p> <center><strong>Prototypes</strong></center></p>
+
+<p>Below are some of the prototypes I developed in <strong>Sketch</strong> and <strong>Adobe XD</strong>. Several factors had to be considered. The application has to be simple for the <strong>end-user to use</strong>.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/Landing%20Page.png" height="500" />&nbsp;
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/picture4.png" height="500" />&nbsp;
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/SRP.png" height="500" />&nbsp;
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/MA.png" height="500" />&nbsp;
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/Help.png" height="500" />&nbsp;
+</p>
+
+<p> <center><strong>UI Demo</strong></center></p>
+<iframe src="https://player.vimeo.com/video/339651407" width="900" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
+
+<hr />
+<center><strong>Things I learned</strong></center>
+
+<p>This experience was enjoyable. I never imagine myself working in Sketch. This was my first time developing mock-ups in Sketch.  It was awesome being able to design concepts to meet the needs of my team and Under Armour.</p>
+
+<p>Hosting focus groups was a different experience for me. It push me out of my comfort zone of being a moderator and guiding the discussion about the end user’s experience with Armour Desk.</p>
+
+<p>I spent most of the time work with the end-users and understanding the back-end; I didn’t set time aside to develop a live interactive prototype. I think if I did, it would be beneficial as a developer to get some more coding experience under my belt.</p>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/web/dev/2018/05/30/Armour-Desk/</guid>
+                <description>
+                    
+                    Re-designing Front-End Service Portal
+                    
+                </description>
+                <pubDate>Wed, 30 May 2018 11:30:19 -0400</pubDate>
+                <author></author>
+            </item>
+        
+    
+  </channel>
+</rss>
