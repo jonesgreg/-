@@ -64,7 +64,7 @@ One of my main objectives was to re-design the interface to be **minimalist**. I
 
 When I think of keeping it simple and user-friendly; I believe other companies follow that mindset, for instance, like **Apple**. I love Apple their aesthetic and minimalist design, which encourage me to bring that feel to life with Armour Desk.
 
-&nbsp;<center><strong>Apple Landing Page</strong></center>
+&nbsp;<center><strong>Apple's Landing Page</strong></center>
 <p align="center">
 <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/apple.png" height="400"/>&nbsp;
 </p>

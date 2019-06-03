@@ -53,7 +53,7 @@ Hawk Ride allows students to register with their **first name**, **lastname**, a
 </p>
 
 &nbsp;<center><strong>Pick up & Drop Off Locations</strong></center>
-Like I mentioned before, students are **limited** to where they can be picked up and dropped off. I decided to develop a **tableview** that displays the list of locations that students can choose from. I stored each location including the **longitude** and **latitude** of the location inside of an **array list**.
+Like I mentioned before, students are **limited** to where they can be picked up and dropped off. I decided to develop a **tableview** that displays the list of locations that students can choose from. I stored each location including the **longitude** and **latitude** of the location inside of an **array**.
 <p align="center">
   <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/locations.png" height="400" width="700" />
 </p>

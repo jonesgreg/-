@@ -83,11 +83,11 @@ My group and I decided to include triggers and procedures in our database. Trigg
 <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/triggers.png" height="350"/>&nbsp;
 </p>
 
-When using SQL programs there is two methods what are available for storing and executing programs. You can **store the programs locally** and **create applications** that send the commands to SQL Server and process them, or you can **save the programs as stored procedures** in SQL Server and create applications that execute the stored procedures and process the results. You can create a stored procedure once, store it in the database, and call it any number of times in a program.
+When using SQL programs there is two methods which are available for storing and executing programs. You can **store the programs locally** and **create applications** that send the commands to SQL Server and process them, or you can **save the programs as stored procedures** in SQL Server and create applications that execute the stored procedures and process the results. You can create a stored procedure once, store it in the database, and call it any number of times in a program.
 
 &nbsp;<center><strong>Stored Procedures</strong></center>
 
-The **GetAllProducts()** stored procedures select all products from the products table. We use the **CREATE PROCEDURE statement** to create a new stored procedure. We specify the name of the stored procedure after the CREATE PROCEDURE statement. In this case, the name of the stored procedure is **GetAllProducts**. We put the parentheses after the name of the stored procedure.
+The **GetAllProducts()** stored procedures select all products from the products table. We use the **CREATE PROCEDURE statement** to create a new stored procedure. We specify the name of the stored procedure after the **CREATE PROCEDURE statement**. In this case, the name of the stored procedure is **GetAllProducts**. We put the parentheses after the name of the stored procedure.
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/jonesgreg/gregoryjones/gh-pages/images/StoredProcedures.png" height="200"/>&nbsp;
